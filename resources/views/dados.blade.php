@@ -3,6 +3,7 @@
 <title> teste</title>
 </head>
 
+
 <body>
 
 {{$getMedia}}

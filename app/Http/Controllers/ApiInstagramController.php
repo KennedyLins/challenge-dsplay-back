@@ -15,26 +15,30 @@ class ApiInstagramController extends Controller
         //Recebendo token da view
         $token = $request->token;
 
+        //Validando se o token é vazio
+        if (empty($token)) {           
+            echo "Um token é necessário para acessar os dados";
+
+        }else{
+
         //Consultando o Id do Usuário através do token
         $getId = Http::get('https://graph.instagram.com/me',[
 
-        'fields'      => 'id,username',
+        'fields'      => 'id,username,account_type,media_count',
         'access_token'=> $token,
         ]);
 
         $id       = $getId['id'];
-        $username = $getId['username'];
-
+        
         //Consultando as Midias do usuário
-        $getMedia = Http::get('https://graph.instagram.com/'.$id.'/media',[
+        $getMedia = Http::get('https://graph.instagram.com/'.$id.'/media',[    
 
         'fields'      => 'id,caption,media_type,media_url,permalink,timestamp,username',
         'access_token'=> $token,
         ]);        
-
-        //Retornando os dados captados para a view
-        return view('dados', compact('getMedia'));
         
+        return $getMedia;
+        }
     }
 
 }

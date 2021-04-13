@@ -9,9 +9,4 @@ use App\Http\Controllers\ApiInstagramController;
 });
 */
 
-
-Route::get('dados22',[ApiInstagramController::class, 'index']);
-
-Route::get('input', function () {
-    return view('input');
-});
+//Route::get('dados',[ApiInstagramController::class, 'index']);
