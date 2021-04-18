@@ -6,6 +6,6 @@ This project is part of challenge to apply for a job at dspaly.
    >#### **composer install**
    
    * This project is hosted in Heroku and you can connect you front end app to the link:
-   > https://challenge-dsplay-back.herokuapp.com/public/api/dados
+   > https://challenge-dsplay-back.herokuapp.com/public/api/dados?token=
 
  
